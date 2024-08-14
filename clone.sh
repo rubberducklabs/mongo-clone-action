@@ -11,6 +11,7 @@ EXCLUDE_PARAM=""
 if [ -n "$EXCLUDE_COLLECTION" ]
   then
     for COLL in $EXCLUDE_COLLECTION; do
+      echo "Add param for $COLL"
       EXCLUDE_PARAM+=" --excludeCollection=$COLL"
     done
 fi
