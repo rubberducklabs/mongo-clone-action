@@ -15,4 +15,4 @@ if [ -n "$EXCLUDE_COLLECTION" ]
     done
 fi
 
-mongodump --uri="${MONGO_URI_SOURCE}" --forceTableScan --archive --excludeCollection=agendaJobs && mongorestore --uri="${MONGO_URI_TARGET}" --archive --nsInclude="${DB_NAME_SOURCE}.*" --nsFrom="${DB_NAME_SOURCE}.*" --nsTo="${DB_NAME_TARGET}.*" --drop
+mongodump --excludeCollection=agendaJobs --uri="${MONGO_URI_SOURCE}" --forceTableScan --archive | mongorestore --uri="${MONGO_URI_TARGET}" --archive --nsInclude="${DB_NAME_SOURCE}.*" --nsFrom="${DB_NAME_SOURCE}.*" --nsTo="${DB_NAME_TARGET}.*" --drop
