@@ -23,7 +23,7 @@ runs:
         mongorestore --version
       shell: bash
     - name: Clone Database
-      run: ${{ github.action_path }}/clone.sh ${{ inputs.source }} ${{ inputs.target }} ${{ inputs.exclude_collection }}
+      run: ${{ github.action_path }}/clone.sh ${{ inputs.source }} ${{ inputs.target }} "${{ inputs.exclude_collection }}"
       shell: bash
 branding:
   icon: 'server'
