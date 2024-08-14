@@ -15,4 +15,4 @@ if [ -n "$EXCLUDE_COLLECTION" ]
     done
 fi
 
-mongodump"${EXCLUDE_PARAM}" --uri="${MONGO_URI_SOURCE}" --forceTableScan --archive | mongorestore --uri="${MONGO_URI_TARGET}" --archive --nsInclude="${DB_NAME_SOURCE}.*" --nsFrom="${DB_NAME_SOURCE}.*" --nsTo="${DB_NAME_TARGET}.*" --drop
+eval "mongodump"${EXCLUDE_PARAM}" --uri="${MONGO_URI_SOURCE}" --forceTableScan --archive | mongorestore --uri="${MONGO_URI_TARGET}" --archive --nsInclude="${DB_NAME_SOURCE}.*" --nsFrom="${DB_NAME_SOURCE}.*" --nsTo="${DB_NAME_TARGET}.*" --drop"
